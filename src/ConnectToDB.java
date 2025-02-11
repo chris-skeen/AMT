@@ -7,7 +7,7 @@ public class ConnectToDB {
 //      Safely connecting to the database.
         Connection connection;
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql:postgres", "postgres", "MesPvs@71"  );
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ATM", "postgres", "Markelg06"  );
              return connection;
         } catch (SQLException e) {
             throw new RuntimeException(e);

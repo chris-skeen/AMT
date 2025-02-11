@@ -12,7 +12,5 @@ public class Main {
         System.out.println("3. Exit");
         System.out.println("-----------------------------");
 
-
-
     }
 }
