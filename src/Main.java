@@ -1,7 +1,9 @@
 import java.sql.*;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("-----------------------------");
         System.out.println("Welcome to your ATM!");
@@ -11,6 +13,13 @@ public class Main {
         System.out.println("2. Register");
         System.out.println("3. Exit");
         System.out.println("-----------------------------");
+
+        String starterOption = scanner.nextLine();
+
+        if (starterOption.equals("1")) {
+            UserLogic userLogic = new UserLogic();
+            userLogic.LogIn();
+        }
 
 
 
