@@ -12,7 +12,7 @@ public class UserLogic {
         CreateStatement createStatement = new CreateStatement();
         Statement st = createStatement.ReturnStatement(tryConnect);
         String username = "";
-
+        String realUsername = null;
         try {
             //      Check if the user is in the system.
             System.out.println("Please State Your Username:");
@@ -20,6 +20,10 @@ public class UserLogic {
             PreparedStatement preparedStatement = tryConnect.prepareStatement("SELECT * FROM Users WHERE username = ?");
             preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                realUsername = resultSet.getString("username");
+            }
+
 
             System.out.println("Please State Your Password:");
             String password = scanner.nextLine();
@@ -28,11 +32,14 @@ public class UserLogic {
             preparedStatement2.setString(1, username);
             preparedStatement2.setString(2, password);
             resultSet = preparedStatement2.executeQuery();
+            if (resultSet.next()) {
+                realUsername = resultSet.getString("username");
+            }
         } catch (Exception e) {
             System.out.println("This username or password is incorrect!");
         }
 
-        return username;
+        return realUsername;
 
     }
 
@@ -40,7 +47,7 @@ public class UserLogic {
 
     //    SIGN UP AREA ----------------------------------------------------------
 
-    public static String signup() throws SQLException {
+    public static String SignUp() throws SQLException {
         // Create connection and statement.
 
         Scanner scanner = new Scanner(System.in);
@@ -86,6 +93,7 @@ public class UserLogic {
 }
 //            SIGN UP AREA ----------------------------------------------------------
 
+//
 
 }
 
