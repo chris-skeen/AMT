@@ -112,7 +112,7 @@ public class Main {
 
 //              Start Of Actual system.
             System.out.println("----------------------------------------------");
-            System.out.println("Welcome to your Atm - (" + atmName + ") " + username);
+            System.out.println("Welcome to your Atm " + username);
             System.out.println("----------------------------------------------");
 
             while (true) {
@@ -133,7 +133,9 @@ public class Main {
                 if (resultSet2.next()) {
                     atmMoney = resultSet2.getBigDecimal("AtmBalance");
                 }
-
+                System.out.println("---------------------------------------------");
+                System.out.println("          " + atmName + "             ");
+                System.out.println("---------------------------------------------");
                 System.out.println("Current Balance: $" + atmMoney);
                 System.out.println("---------------------------------------------");
                 System.out.println("What would you like to do?");

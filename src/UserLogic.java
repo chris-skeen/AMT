@@ -256,6 +256,8 @@ public class UserLogic {
             preparedStatement3.setString(1, newAtmName);
             preparedStatement3.setInt(2, userID);
 
+            System.out.println("Your ATM name has been changed to: " + newAtmName);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
